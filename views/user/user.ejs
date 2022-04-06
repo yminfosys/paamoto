@@ -17,11 +17,18 @@
         <!-- Bootstrap CSS -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
+
+        
+
         <script src="/user/userMap.js"></script>
         <script src="/user/userScrpt.js"></script>
+
+        
        
     </head>
     <body>
+
+
        
 <script>
 
@@ -56,42 +63,45 @@ window.location.href = "/";
                       <h3 class="panel-title"></h3>
                 </div>
                 <div  class="panel-body" style="height: 80vh;">
-                      
                     <div class="form-group">                           
                         <span id="mssg" style="color: rgb(34, 112, 44); width: 100%; text-align: center;"></span>
-                        
-                           
-                        
                     <label class="control-label" for="mobile">Enter Valid Mobile Number</label>
                         <div class="input-group">                       
                             <div class="input-group-addon">+91</div>                    
-                            <input id="mobile" name="mobile" onkeydown="mkeydown()"  onkeyup="mkeyup()" type="number" class="form-control" placeholder="Mobile Number">
+                            <input id="mobile" name="mobile" type="number" class="form-control" placeholder="Mobile Number">
                         </div>
                     </div>
-
-                  
-                        <div id="otp-content" style="display: nonee;" class="row">                        
-                            <div class="form-group">
-                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
-                                    <input id="otp" onkeyup="verifyOTP()" type="text" class="form-control" placeholder=" 4 Digit OTP">
-                                    <input id="otp1" type="hidden">
-                                    <label id="otpnotmatch" class="control-label" for="mobile">Not Match</label>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
-                                    <p id="resendOTP" onclick="resendOTP()">Resend OTP</p>
-                                </div>
-                            </div>
-    
-                        </div> 
+                    <div id="otp-content" style="display: none;" class="row">                        
                         <div class="form-group">
-                            <button type="button" id="btnLogin" class="btn btn-block btn-default">Get Started </button>
+                            <div class="col-xs-6 col-sm-6">
+                                <input id="otp" type="text" class="form-control" placeholder=" 4 Digit OTP">
+                                <input id="otp1" type="hidden">
+                                <label id="otpnotmatch" class="control-label" for="mobile">Not Match</label>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 ">
+                                <button onclick="resendOTP()" type="button" class="btn  btn-default"> <i class="fa fa-refresh" aria-hidden="true"></i>  </button>
+                                <span id="countdown"></span>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 ">
+                                <button onclick="verifyOTP()" type="button" id="btnLogin" class="btn btn-block btn-default">Vreify Otp <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                            </div>
                         </div>
 
+                    </div> 
+                    <div id="getStarted" class="form-group">
+                        <button onclick="getStarted()" type="button" id="btnLogin" class="btn btn-block btn-default">Get Started <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                    </div>
+
+
+                    <div  class="form-group">
+                        <input id="ip" type="text" class="form-control">
+                    </div>
                       
                 </div>
             </div>
          
-            <div id="main-content" class="row">
+            <div id="main-content" class="row" style="display: none;">
                 <div class="col-xs-12 col-sm-12" style="width: 100%; height: 100px;">
                 
                         <div id="map"></div>
@@ -102,6 +112,12 @@ window.location.href = "/";
             
         </div>
         
+        <script>
+            function getIP(json) {  
+                $("#ip").val(json.ip)
+    console.log("My public IP address is: ", json.ip);  
+ }
+        </script>
 
 
         <!-- jQuery -->
@@ -111,6 +127,8 @@ window.location.href = "/";
         <script async defer   
         src="https://maps.googleapis.com/maps/api/js?key=<%=YOUR_API_KEY%>&callback=initMap">
         </script>
+
+        <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
     
     </body>
 </html>
