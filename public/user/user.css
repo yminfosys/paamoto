@@ -1,0 +1,60 @@
+#btnLogin{
+  background-color: black; color: aliceblue; margin-top: 10vh;
+}
+
+#btngotoOrderPage{
+  background-color: black; color: aliceblue; margin-top: 2vh;
+}
+
+#profile-batch{
+  position: fixed; border: 1px solid #000; border-radius: 5vh; left: 2vh; top: 2vh; z-index: 1;
+}
+#profile-batch img{
+  width: 5vh;
+  height: 5vh;
+  
+}
+.closeaProfileNave{
+  position: absolute; right: 2vh; top: 2vh; 
+  background-color: rgb(113, 101, 101); color: rgb(7, 7, 6); border-radius: 5px; text-align: justify; width: 3vh; padding-left: 1vh;
+}
+
+#map {
+    height: 100%;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+  }
+
+  #map .centerMarker {
+    position: absolute;
+    /*url of the marker*/
+    background: url(/images/other/centerpin.png) no-repeat;
+    /*center the marker*/
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    /*fix offset when needed*/
+    margin-left: -16px;
+    margin-top: -32px;
+    /*size of the image*/
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  
+  #map .navigationMarker {
+    position: absolute;
+    /*url of the marker*/
+    background: url(/images/other/gpsloc.png) no-repeat;
+    /*center the marker*/
+    top: 85%;
+    left: 85%;
+    z-index: 6;
+    /*fix offset when needed*/
+    /* margin-left: -10px;
+    margin-top: -35px; */
+    /*size of the image*/
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+  }

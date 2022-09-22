@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="/admin/sidebar.css" rel="stylesheet" type="text/css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+        <script src="/admin/sidebar.js"></script>
+        <script src="/admin/adminScrpt.js"></script>
+
+     
+    </head>
+
+    <body>
+
+        <div id="sidebar-waper">
+            <div class="togle-btn" onclick="sidebartoggle()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="sidebar-menue">
+            <li class="Dashboard"><a href="../india/admin"> <i class="fa fa-dashboard" aria-hidden="true"></i><span> Dashboard</span></a></li>
+            <li class="Profile">
+              <a href="#ProfileSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                  <i class="fa fa-cogs"></i>
+                  <span>Menu</span>
+              </a>
+              <ul class="collapse " id="ProfileSubmenu">
+                  <li><a href="#" onclick="cityandprice()">City And Price</a></li>
+                  <li><a href="#" onclick="driverIncentiveModule()">Driver Incentive module</a></li>
+                  <li><a href="#" onclick="driverWithdral()">Driver Withdral Requiest</a></li>
+              </ul>
+            </li>
+            
+            <li class="ridedetails"><a href="/india/admin/ridedetails"> <span> Ride Details</span></a></li>
+            <li onclick="creatallIndiaCityInit()" class="ridedetails"><a href="#"> <span> Create All India City</span></a></li>
+            <li class="gst"><a href="/india/admin/gstReport"> <span> Gst Report</span></a></li>
+            <li onclick="addWallermoneyInit()" class="addwallet"><a href="#"> <span>Add Wallet Momey</span></a></li>
+            <li onclick="orderAmountModify()" class="modf"><a href="#"> <span>Modify Order Amount</span></a></li>
+            
+            <li class="Logout"><a href="/india/admin/logout"> <span> Logout</span></a></li>
+            </ul>
+        </div>
+
+        <div id="main-content">   
+            <div  id="cityPriceModule">
+                
+
+            </div>
+
+
+        </div>
+    
+           
+           
+           
+           
+    
+       
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
